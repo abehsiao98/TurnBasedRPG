@@ -15,7 +15,7 @@ public class Summon : CombatAction
         caster.ReduceMp(GameConfig.CombatAction.RequiredMp.Summon);
         var slime = SlimeFactory.CreateSlime(caster);
         caster.Register(new SlimeObserver(caster));
-        caster.GetTroop().Register(slime);
+        caster.AddAlley(slime);
     }
     protected override List<Role> SelectTargetsWithAi(Role caster, Troop troop) => new();
 }

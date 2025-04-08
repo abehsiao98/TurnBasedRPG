@@ -76,6 +76,7 @@ public abstract class Role
         }
         _roleObservers.Remove(roleObserver);
     }
+    public void AddAlley(Role role) => _troop.Register(role);
     private void Notify(Role role) => _roleObservers.ForEach(o => o.Notify(role));
     public Dictionary<string, CombatAction> GetCombatActionDic() => _combatActionDic;
     public Troop GetTroop() => _troop;
